@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-filename="${HOME}/Images/Screenshots/$(date +'%Y%m%d_%H%m%S')_area.png"
+filename="${HOME}/Pictures/Screenshots/$(date +'%Y%m%d_%H%m%S')_area.png"
 summary="Screenshot area saved"
 touch $filename
 grim -g "$(slurp)" $filename | grim - | wl-copy
