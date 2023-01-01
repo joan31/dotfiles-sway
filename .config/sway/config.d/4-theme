@@ -1,0 +1,40 @@
+# Theme
+# Wallpaper
+output * bg $wallpaperPath fill
+
+# GTK Theming
+exec_always $gtkScript
+
+# Font
+font pango:$fontName $fontStyle $fontSize
+
+# Cursor
+seat seat0 xcursor_theme $cursorName $cursorSize 
+
+# Windows
+default_border pixel 2
+for_window [class=".*"] border pixel 2
+default_floating_border none
+
+titlebar_padding 1
+titlebar_border_thickness 0
+
+# smart_gaps on
+# hide_edge_borders smart
+
+gaps inner 10
+gaps outer 0
+gaps bottom 1
+gaps top 1
+
+# Sway Theming
+# Class                    Border       Bground    Text      Indicat      Child_border
+
+# Catppuccin Mocha
+# Blue variant
+client.focused             $blue        $base      $text     $blue        $blue
+client.focused_inactive    $base        $base      $text     $base        $base
+client.unfocused           $base        $base      $text     $base        $base
+client.urgent              $peach       $base      $peach    $peach       $peach
+client.placeholder         $overlay0    $base      $text     $overlay0    $overlay0
+client.background          $base

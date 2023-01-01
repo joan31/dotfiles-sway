@@ -1,0 +1,10 @@
+[Default]
+save_dir=$HOME/Images/Screenshots
+save_filename_format=%Y%m%d_%H%M%S_swappy.png
+show_panel=true
+line_size=2
+text_size=12
+text_font=SF Pro Display
+paint_mode=brush
+early_exit=false
+fill_shape=false

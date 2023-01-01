@@ -1,0 +1,42 @@
+@import ".config/wofi/themes/mocha.css";
+
+window {
+margin: 0px;
+border: 2px solid @blue;
+background-color: alpha(@mantle, 0.6);
+}
+
+#input {
+margin: 5px;
+border: none;
+color: @text;
+background-color: alpha(@base, 0.7);
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+border-radius: 5px;
+background-color: alpha(@base, 0.7);
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: alpha(@mantle, 0.0);
+}
+
+#scroll {
+margin: 0px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: @text;
+} 
+
+#entry:selected {
+background-color: alpha(@surface0, 0.7);
+}

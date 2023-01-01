@@ -1,0 +1,48 @@
+# Rules
+# Title format for windows
+for_window [shell="xdg_shell"] title_format "%title (%app_id)"
+for_window [shell="xwayland"] title_format "%class - %title"
+
+## Windows opacity
+#set $opacity 0.95
+#for_window [class=".*"] opacity $opacity
+#for_window [app_id=".*"] opacity $opacity
+
+#for_window [app_id="firefox"] opacity 1.0
+#for_window [class="firefox"] opacity 1.0
+#for_window [class="mpv"] opacity 1.0
+#for_window [class="Gimp-2.10"] opacity 1.0
+#for_window [app_id="foot"] opacity 1.0
+
+# Assign workspaces
+for_window [app_id="discord"] move to workspace $ws7, workspace $ws7
+# Spotify xwayland
+for_window [class="Spotify"] move to workspace $ws9, workspace $ws9
+# Spotify wayland
+for_window [app_id="" title="^Spotify$"] move to workspace $ws9, workspace $ws9
+
+# Floating rules
+for_window [app_id="mpv"] floating enable
+for_window [app_id="mpv"] resize set 960 540
+for_window [app_id="mpv"] border pixel 0
+for_window [app_id="firefox" title="Firefox – Sharing Indicator"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
+for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
+for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+for_window [app_id="firefox" title="— Firefox"] floating enable
+for_window [app_id="firefox" title="^Firefox"] floating enable
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1030 height 710
+for_window [app_id="thunar" title="^Copying.*"] floating enable
+for_window [app_id="thunar" title="^File.*"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Steam" title="^Steam$"] floating none
+for_window [class="kDrive"] fullscreen enable
+
+# Inhibit idle
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
+for_window [app_id="mpv"] inhibit_idle focus

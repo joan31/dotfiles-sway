@@ -1,0 +1,17 @@
+#!/bin/sh
+# VK layers (MangoHUD workaround) for VK_Capture OBS function 
+
+if [ "$#" -eq 0 ]; then
+    programname=`basename "$0"`
+    echo "ERROR: No program supplied"
+    echo
+    echo "Usage: $programname <program>"
+    exit 1
+fi
+
+exec env LD_LIBRARY_PATH="${LD_LIBRARY_PATH}${LD_LIBRARY_PATH:+:}/usr/\$LIB" \
+	LD_PRELOAD="${LD_PRELOAD}${LD_PRELOAD:+:}libobs_glcapture.so" \
+	OBS_VKCAPTURE=1 \
+	VK_ADD_LAYER_PATH="/usr/share/vulkan/implicit_layer.d" \
+	VK_LOADER_LAYERS_ENABLE="VK_LAYER_OBS_vkcapture_*" \
+	"$@"

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Set AMD Pro driver for OBS AMF support
+parameters=$@
+VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/amd_pro_icd64.json" /usr/bin/obs $parameters

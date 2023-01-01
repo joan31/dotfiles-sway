@@ -1,0 +1,9 @@
+# Input
+# Keyboard
+input "1008:1425:HP,_Inc_HyperX_Alloy_Origins" {
+	xkb_layout "fr"
+	xkb_variant "azerty"
+	xkb_model "pc105"
+	xkb_options "compose:rctrl"
+	xkb_numlock enable
+}

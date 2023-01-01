@@ -1,0 +1,5 @@
+#!/bin/sh
+# Workaround for Spotify client not using cursor custom theme
+# https://www.reddit.com/r/archlinux/comments/zcqmsh/spotify_from_aur_not_following_cursor_theme/
+parameters=$@
+XCURSOR_PATH="${HOME}/.local/share/icons" /usr/bin/spotify $parameters

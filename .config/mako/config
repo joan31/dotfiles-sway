@@ -1,0 +1,100 @@
+# GLOBAL CONFIGURATION OPTIONS
+max-history=20
+sort=-time
+
+# BINDING OPTIONS
+on-button-left=invoke-default-action
+on-button-middle=none
+on-button-right=dismiss-all
+on-touch=dismiss
+on-notify=none
+
+# STYLE OPTIONS
+font=Symbols Nerd Font, SF Pro Display 12
+width=350
+height=175
+outer-margin=0
+margin=20
+padding=15
+border-size=2
+border-radius=8
+icons=1
+max-icon-size=96
+icon-location=left
+markup=1
+actions=1
+history=1
+text-alignment=left
+default-timeout=5000
+ignore-timeout=0
+group-by=none
+max-visible=5
+output=DP-1
+layer=top
+anchor=top-right
+
+# COLORS THEME MACHO
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
+
+# CRITERIA
+[urgency=low]
+border-color=#cdd6f4
+
+[urgency=critical]
+border-color=#f38ba8
+default-timeout=0
+
+[app-name=Spotify]
+border-color=#a6e3a1
+default-timeout=2000
+group-by=category
+
+[app-name=control_volume]
+width=170
+text-alignment=center
+anchor=top-center
+group-by=app-name
+default-timeout=2000
+format=<b>%s</b>
+
+[app-name=control_volume group-index=0]
+invisible=false
+
+[app-name=ws_switch_monitorRight]
+background-color=#181825
+width=50
+height=50
+margin=0
+padding=5
+border-size=0
+border-radius=15
+text-alignment=center
+output=DP-2
+anchor=top-right
+group-by=app-name
+default-timeout=2000
+format=%s
+
+[app-name=ws_switch_monitorRight group-index=0]
+invisible=false
+
+[app-name=ws_switch_monitorLeft]
+background-color=#181825
+width=50
+height=50
+margin=0
+padding=5
+border-size=0
+border-radius=15
+text-alignment=center
+output=HDMI-A-1
+anchor=top-left
+group-by=app-name
+default-timeout=2000
+format=%s
+
+[app-name=ws_switch_monitorLeft group-index=0]
+invisible=false

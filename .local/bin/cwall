@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Usage:
+# ./cwall <picture/path picture>
+
+# Global variables
+PATH_WALLPAPER="$(readlink -f $1)"
+SYMLINK_WALLPAPER=""$HOME"/.wall"
+
+# Main
+# Control if argument is empty or file not exist
+if [[ -z "$PATH_WALLPAPER" ]] || [[ ! -f "$PATH_WALLPAPER" ]]
+then
+	echo "Picture or path picture is incorrect or missing"
+	echo "Usage : cwall <picture/path picture>"
+	exit 1
+else
+	ln -sf "$PATH_WALLPAPER" "$SYMLINK_WALLPAPER"
+	swaymsg reload
+	exit 0
+fi

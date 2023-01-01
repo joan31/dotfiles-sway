@@ -1,0 +1,8 @@
+# Output
+# Monitors Left Middle Right
+output $monitorLeft pos 0 0
+output $monitorMiddle pos 1920 0
+output $monitorRight pos 3840 0
+
+# Set Prefered Monitor for X11/Wine (fix some bugs)
+exec_always xrandr --output $xwaylandMonitor --primary

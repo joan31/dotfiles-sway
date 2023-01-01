@@ -1,0 +1,113 @@
+# Variables
+# Mod Key 
+set $mod Mod4
+
+# Monitors
+set $monitorMiddle DP-1
+set $monitorRight DP-2
+set $monitorLeft HDMI-A-1
+
+# Virtual X11 Monitor
+set $xwaylandMonitor XWAYLAND0
+
+# Direction Keys
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Terminal
+set $term $TERM
+
+# Browser
+set $browser $BROWSER
+
+# Idle timeouts (seconds)
+set $lockTime 600
+set $offMonitorsTime 900
+set $suspendTime 3600
+set $keyLockOffTime 20
+
+# Lock Script
+set $lockScript $HOME/.config/sway/scripts/sway_lock.sh
+
+# Switch Monitor Notification Script
+set $monitorSwitch $HOME/.config/sway/scripts/monitor_switch.sh
+
+# Application Launcher
+set $menu wofi | xargs swaymsg exec --
+
+# Wallpaper Path
+set $wallpaperPath $HOME/.wall
+
+# GTK Script
+set $gtkScript $HOME/.config/sway/scripts/import-gsettings
+
+# Multimedia
+set $controlVolume $HOME/.config/sway/scripts/control_volume.sh
+set $valueVolume 2
+
+# Screenshot Script
+set $screenshotArea $HOME/.config/sway/scripts/screenshot_area.sh
+set $screenshotMonitor $HOME/.config/sway/scripts/screenshot_monitor.sh
+
+# Font (pango)
+set $fontName "SF Pro Display"
+set $fontStyle Regular
+set $fontSize 12
+
+# Cursor Theme
+set $cursorName Catppuccin-Mocha-Blue-Cursors
+set $cursorSize 32
+
+# Workspaces Symbols
+set $wss1 一
+set $wss2 二
+set $wss3 三
+set $wss4 四
+set $wss5 五
+set $wss6 六
+set $wss7 七
+set $wss8 八
+set $wss9 九
+set $wss10 十
+
+# Workspaces Buttons
+set $ws1 1:$wss1
+set $ws2 2:$wss2
+set $ws3 3:$wss3
+set $ws4 4:$wss4
+set $ws5 5:$wss5
+set $ws6 6:$wss6
+set $ws7 7:$wss7
+set $ws8 8:$wss8
+set $ws9 9:$wss9
+set $ws10 10:$wss10
+
+# Colors
+# Catppuccin Mocha
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b

@@ -1,0 +1,177 @@
+# Main
+# Idle configuration
+exec swayidle -w \
+	timeout $lockTime '$lockScript' \
+	timeout $offMonitorsTime 'swaymsg "output * dpms off"' \
+	timeout $suspendTime 'systemctl suspend' \
+	timeout $keyLockOffTime 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep 'playerctl pause' \
+	before-sleep '$lockScript'
+
+# Assigned Workspaces to Monitors
+# Monitor Middle
+workspace $ws1 output $monitorMiddle
+workspace $ws2 output $monitorMiddle
+workspace $ws3 output $monitorMiddle
+workspace $ws4 output $monitorMiddle
+workspace $ws5 output $monitorMiddle
+workspace $ws6 output $monitorMiddle
+
+# Monitor Right
+workspace $ws9 output $monitorRight
+workspace $ws10 output $monitorRight
+
+# Monitor Left
+workspace $ws7 output $monitorLeft
+workspace $ws8 output $monitorLeft
+
+# Key bindings
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menu
+
+# Start your web browser
+bindsym $mod+w exec $browser
+
+# Lock screen
+bindsym $mod+Ctrl+l exec $lockScript
+
+# Multimedia keys
+bindsym XF86AudioMute exec $controlVolume mute
+bindsym XF86AudioRaiseVolume exec $controlVolume raise $valueVolume
+bindsym XF86AudioLowerVolume exec $controlVolume lower $valueVolume
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Screenshot area to swappy
+bindsym Print exec grim -g "$(slurp)" - | swappy -f -
+
+# Screenshot monitor to swappy
+bindsym Print+Ctrl exec grim - | swappy -f -
+
+# Screenshot area to png file and clipboard
+bindsym Print+Shift exec $screenshotArea 
+
+# Screenshot monitor to png file and clipboard
+bindsym Print+Ctrl+Shift exec $screenshotMonitor
+
+# Screenshot area to clipboard only
+bindsym Print+Alt exec grim -g "$(slurp)" - | wl-copy
+
+# Screenshot monitor to clipboard only
+bindsym Print+Ctrl+Alt exec grim - | wl-copy
+
+# Drag floating windows by holding down $mod and left mouse button.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit' -s 'No'
+
+# Moving around
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Workspaces
+# Switch to workspace
+bindsym $mod+ampersand workspace $ws1
+bindsym $mod+eacute workspace $ws2
+bindsym $mod+quotedbl workspace $ws3
+bindsym $mod+apostrophe workspace $ws4 
+bindsym $mod+parenleft workspace $ws5
+bindsym $mod+minus workspace $ws6
+bindsym $mod+egrave workspace $ws7, exec $monitorSwitch monitorLeft $wss7
+bindsym $mod+underscore workspace $ws8, exec $monitorSwitch monitorLeft $wss8
+bindsym $mod+ccedilla workspace $ws9, exec $monitorSwitch monitorRight $wss9
+bindsym $mod+agrave workspace $ws10, exec $monitorSwitch monitorRight $wss10
+# Move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace $ws1
+bindsym $mod+Shift+eacute move container to workspace $ws2
+bindsym $mod+Shift+quotedbl move container to workspace $ws3
+bindsym $mod+Shift+apostrophe move container to workspace $ws4
+bindsym $mod+Shift+parenleft move container to workspace $ws5
+bindsym $mod+Shift+minus move container to workspace $ws6
+bindsym $mod+Shift+egrave move container to workspace $ws7
+bindsym $mod+Shift+underscore move container to workspace $ws8
+bindsym $mod+Shift+ccedilla move container to workspace $ws9
+bindsym $mod+Shift+agrave move container to workspace $ws10
+
+# Layout stuff
+# You can "split" the current object of your focus with $mod+b or $mod+v, for horizontal and vertical splits respectively
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+q focus parent
+
+# Scratchpad
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+parenright move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window
+bindsym $mod+parenright scratchpad show
+
+# Resizing Containers
+mode "resize" {
+	bindsym $left resize shrink width 10px
+	bindsym $down resize grow height 10px
+	bindsym $up resize shrink height 10px
+	bindsym $right resize grow width 10px
+
+	# Ditto, with arrow keys
+	bindsym Left resize shrink width 10px
+	bindsym Down resize grow height 10px
+	bindsym Up resize shrink height 10px
+	bindsym Right resize grow width 10px
+
+	# Return to default mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Status Bar
+bar swaybar_command waybar

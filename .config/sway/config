@@ -1,0 +1,8 @@
+# Global config
+# sway does not set DISPLAY/WAYLAND_DISPLAY in the systemd user environment
+# See FS#63021
+# Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
+include /etc/sway/config.d/*
+
+# User config
+include $HOME/.config/sway/config.d/*

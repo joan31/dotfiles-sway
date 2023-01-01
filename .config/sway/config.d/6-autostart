@@ -1,0 +1,24 @@
+# Autostart
+# Terminal Server
+exec foot -s
+
+# Thunar daemon
+exec thunar --daemon
+
+# Notification
+exec mako
+
+# Cloud
+exec kDrive
+
+# Steam
+exec steam-native %U -silent
+
+# Spotify with wayland support
+exec spotify --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+# Password Manager
+exec sleep 1 && keepassxc
+
+# Move cursor to the first workspace
+exec sleep 1 && swaymsg "workspace $ws1"

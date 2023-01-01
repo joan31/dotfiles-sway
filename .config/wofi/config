@@ -1,0 +1,11 @@
+show=drun,run
+layer=top
+location=0
+allow_images=true
+image_size=22
+gtk_dark=true
+terminal=footclient
+key_expand=Tab
+run-always_parse_args=true
+normal_window=false
+insensitive=true
