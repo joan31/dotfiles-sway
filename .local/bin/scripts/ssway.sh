@@ -28,8 +28,10 @@ export XCURSOR_THEME="Catppuccin-Mocha-Lavender-Cursors"
 export XCURSOR_SIZE="32"
 
 # GTK
+# PORTAL option needed to use thunar file browser on steam
 #export GTK_THEME="Adwaita:dark"
 export GTK_THEME="Catppuccin-Mocha-Standard-Blue-Dark:dark"
+export GTK_USE_PORTAL="1"
 
 # QT
 export QT_QPA_PLATFORM="wayland-egl;xcb"

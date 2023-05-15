@@ -8,7 +8,7 @@ set $monitorRight DP-2
 set $monitorLeft HDMI-A-1
 
 # Virtual X11 Monitor
-set $xwaylandMonitor XWAYLAND0
+set $xwaylandMonitor DP-1
 
 # Direction Keys
 set $left h
