@@ -1,6 +1,11 @@
-# 🧩 sway Dotfiles
+# 🧩 Sway Dotfiles
 
-[![Project Status: Archived](https://img.shields.io/badge/status-archived-lightgrey.svg)](https://github.com/joan31/dotfiles-sway)
+[![Project Status: Archived](https://img.shields.io/badge/status-archived-lightgrey?style=flat-square)](https://github.com/joan31/dotfiles-sway)
+![Linux](https://img.shields.io/badge/OS-Linux-black?style=flat-square&logo=linux&logoColor=white)
+![Arch Linux](https://img.shields.io/badge/Distro-Arch-blue?style=flat-square&logo=arch-linux)
+![Wayland](https://img.shields.io/badge/Display%20Server-Wayland-yellow?style=flat-square&logo=wayland)
+![Sway](https://img.shields.io/badge/WM-Sway-cyan?style=flat-square&logo=sway)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square&logo=open-source-initiative)](LICENSE)
 
 ## ⚠️ Archived - No longer maintained
 
